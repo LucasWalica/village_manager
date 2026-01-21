@@ -119,7 +119,7 @@ export class DungeonRun {
   @Column()
   userId: number;
 
-  @OneToMany(() => Battle, battle => battle.dungeonRun)
+  @OneToMany(() => Battle, battle => battle.dungeonRunId)
   battles: Battle[];
 
   @CreateDateColumn()
@@ -134,7 +134,7 @@ export class DungeonRun {
   }
 
   get isFailed(): boolean {
-    return this.status === RunStatus.FAILED || RunStatus.ABANDONED;
+    return this.status === RunStatus.FAILED || this.status === RunStatus.ABANDONED;
   }
 
   get duration(): number {

@@ -35,11 +35,11 @@ import { DungeonRun } from './dungeons/entities/dungeon-run.entity';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
-        host: configService.get<string>('DB_HOST') || 'localhost',
-        port: configService.get<number>('DB_PORT') || 5432,
-        username: configService.get<string>('DB_USERNAME') || 'postgres',
-        password: configService.get<string>('DB_PASSWORD') || 'password',
-        database: configService.get<string>('DB_DATABASE') || 'village_manager',
+        host: configService.get<string>('DATABASE_HOST') || 'postgres',
+        port: configService.get<number>('DATABASE_PORT') || 5432,
+        username: configService.get<string>('DATABASE_USER') || 'admin',
+        password: configService.get<string>('DATABASE_PASSWORD') || 'password123',
+        database: configService.get<string>('DATABASE_NAME') || 'village_manager',
         entities: [
           User,
           Character,

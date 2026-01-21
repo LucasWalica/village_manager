@@ -157,8 +157,8 @@ export class EnemyTemplate {
     fleeThreshold?: number; // HP percentage to flee
   };
 
-  @Column({ default: false })
-  isBoss: number; // 0 = normal, 1 = mini-boss, 2 = final boss
+  @Column({ type: 'boolean', default: false })
+  isBoss: boolean; // true = boss, false = normal enemy
 
   @Column({ type: 'json', nullable: true })
   dungeonDifficulty: {

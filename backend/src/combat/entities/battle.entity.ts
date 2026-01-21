@@ -93,6 +93,9 @@ export class Battle {
   @Column({ nullable: true })
   endedAt: Date;
 
+  @Column({ nullable: true })
+  dungeonRunId: number;
+
   @CreateDateColumn()
   createdAt: Date;
 
