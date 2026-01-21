@@ -131,11 +131,17 @@ Las cookies de autenticación tienen las siguientes características:
 ```
 src/auth/
 ├── auth.module.ts          # Módulo principal
-├── auth.controller.ts      # Controlador de endpoints
-├── auth.service.ts         # Lógica de negocio
+├── auth.controller.ts      # Controlador de endpoints de autenticación
+├── auth.service.ts         # Lógica de negocio de autenticación
+├── users.controller.ts     # Controlador de endpoints de usuarios
+├── users.service.ts        # Lógica de negocio de usuarios
+├── entities/
+│   └── user.entity.ts     # Entidad de usuario
 ├── dto/
 │   ├── login.dto.ts        # DTO para login
-│   └── register.dto.ts     # DTO para registro
+│   ├── register.dto.ts     # DTO para registro
+│   ├── create-user.dto.ts   # DTO para crear usuario
+│   └── update-user.dto.ts   # DTO para actualizar usuario
 ├── strategies/
 │   ├── jwt.strategy.ts     # Estrategia JWT
 │   └── local.strategy.ts   # Estrategia local
